@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "python-template"
+version = "0.1.0"
+description = "A python project that can serve as a template. The aim is to learn the appropriate tools for Python development."
+authors = ["Pierre-Loïc FELTER"]
+readme = "README.md"
+packages = [{include = "python_template"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
