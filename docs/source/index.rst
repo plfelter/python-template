@@ -25,7 +25,7 @@ This documentation aims at describing the tools and workflow that can be used to
    tools
    project-setup
    dev-work-flow
-   markdown.md
+   markdown
 .. self
 .. uncomment self to have the welcome page in the left panel
 
