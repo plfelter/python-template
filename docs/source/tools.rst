@@ -2,22 +2,25 @@ Tools
 =====
 
 This section describes a full set of tools for clean Python development.
-Of course, it is not exhaustive.
-In addition, note that alternatives exist, this list provides guidance for a fully covered
-development pipe but is subject to evolutions !
+
+.. note::
+
+   | Of course, the following list is not exhaustive.
+   | Also note that alternatives exist, we only provide guidance for a fully covered development pipe but is subject to evolutions !
+
 
 Mandatory tools
 ~~~~~~~~~~~~~~~
 
 Text editor
 -----------
-Use `Notepad++ <https://notepad-plus-plus.org/>`_ for basic editing tasks.
+Use softwares like `Sublime Text <https://www.sublimetext.com/>`_ or `Notepad++ <https://notepad-plus-plus.org/>`_ for basic editing tasks.
 For more performances, using an Integrated Development Environment (IDE)
 such as `PyCharm <https://www.jetbrains.com/pycharm/>`_ or `VSCode <https://code.visualstudio.com/>`_
 will help to increase development speed by automating some tasks and integrating other tools in a common interface.
 
 git
-------------
+---
 git
     `git <https://git-scm.com/>`_ is a popular Version Control System (VCS) that allows, among other features,
     to save the work state and navigate in history.
@@ -82,10 +85,10 @@ Sphinx
 
 .. code-block:: console
 
-   $ poetry add sphinx
+   $ poetry add sphinx sphinx-autobuild myst-parser
 
 Write your project documentation using reStructuredText or
 Markdown syntax, Sphinx builds a beautiful documentation in the form of a static site (HTML, CSS)
-that you can open in a web browser or publish as a website.
+that you can open in a web browser or publish as a website (for example on a GitHub Page).
 
 

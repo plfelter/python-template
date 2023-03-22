@@ -19,17 +19,67 @@ This documentation aims at describing the tools and workflow that can be used to
 
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Sections:
+   :maxdepth: 4
+   :numbered:
 
    tools
    project-setup
    dev-work-flow
+   markdown.md
+.. self
+.. uncomment self to have the welcome page in the left panel
 
+
+
+
+
+.. warning::
+
+   This project is under active development.
 
 .. note::
 
-   This project is under active development.
+   Hehehe !
+
+
+.. code-block:: python
+   :linenos:
+   :caption: Example Python function
+
+   def f():
+       print('yaaassssss')
+
+.. seealso::
+
+   Module :py:mod:`zipfile`
+      Documentation of the :py:mod:`zipfile` standard module.
+
+   `GNU tar manual, Basic Tar Format <http://link>`_
+      Documentation for tar archive files, including GNU tar extensions.
+
+
+.. code-block:: c
+
+   (int) function(*int a):
+      return *a
+
+.. math::
+
+   (a + b)^2 = a^2 + 2ab + b^2
+
+   (a - b)^2 = a^2 - 2ab + b^2
+
+
+=====  =====  ======
+   Inputs     Output
+------------  ------
+  A      B    A or B
+=====  =====  ======
+False  False  False
+True   False  True
+False  True   True
+True   True   True
+=====  =====  ======
 
 
 Check out the :doc:`tools` section for further information.
