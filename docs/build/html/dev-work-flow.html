@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -190,7 +190,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -198,10 +198,62 @@
         <article role="main">
           <section id="development-flow">
 <h1><span class="section-number">3. </span>Development flow<a class="headerlink" href="#development-flow" title="Permalink to this heading">#</a></h1>
+<section id="documentation">
+<h2><span class="section-number">3.1. </span>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h2>
+<p>The full Sphinx documentation creation tutorial is available at <a class="reference external" href="https://www.sphinx-doc.org/en/master/tutorial/index.html">https://www.sphinx-doc.org/en/master/tutorial/index.html</a></p>
+<p>Find below a summary of useful commands.</p>
+<section id="install-sphinx">
+<h3><span class="section-number">3.1.1. </span>Install Sphinx<a class="headerlink" href="#install-sphinx" title="Permalink to this heading">#</a></h3>
+<p>Install Sphinx like described in the <a class="reference internal" href="tools.html#sphinx"><span class="std std-ref">Sphinx</span></a> section.</p>
+</section>
+<section id="init-project-files-structure-and-content">
+<h3><span class="section-number">3.1.2. </span>Init project files (structure and content)<a class="headerlink" href="#init-project-files-structure-and-content" title="Permalink to this heading">#</a></h3>
+<p>Sphinx provides a utility to easily setup a project:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry<span class="w"> </span>run<span class="w"> </span>sphinx-quickstart<span class="w"> </span>docs
+
+<span class="go">&gt; Separate source and build directories (y/n) [n]: Write “y” (without quotes) and press Enter.</span>
+<span class="go">&gt; Project name: Write “Lumache” (without quotes) and press Enter.</span>
+<span class="go">&gt; Author name(s): Write “Graziella” (without quotes) and press Enter.</span>
+<span class="go">&gt; Project release []: Write “0.1” (without quotes) and press Enter.</span>
+<span class="go">&gt; Project language [en]: Leave it empty (the default, English) and press Enter.</span>
+</pre></div>
+</div>
+</section>
+<section id="work-on-documentation-content">
+<h3><span class="section-number">3.1.3. </span>Work on documentation content<a class="headerlink" href="#work-on-documentation-content" title="Permalink to this heading">#</a></h3>
+<p>Use any file editor to create and modify .rst or .md files in the /docs/source directory.</p>
+<ul class="simple">
+<li><p>Manual pipe for documentation build after editing</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry<span class="w"> </span>run<span class="w"> </span>sphinx-build<span class="w"> </span>-b<span class="w"> </span>html<span class="w"> </span>docs/source/<span class="w"> </span>docs/build/html
+<span class="gp">$ </span>poetry<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span>-d<span class="w"> </span>./docs/build/html
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Automatized pipe for concurrent documentation editing and building</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry<span class="w"> </span>run<span class="w"> </span>sphinx-autobuild<span class="w"> </span>-a<span class="w"> </span>-E<span class="w"> </span>-b<span class="w"> </span>html<span class="w"> </span>docs/source/<span class="w"> </span>docs/build/html
+</pre></div>
+</div>
+</section>
+<section id="publish-as-a-static-website">
+<h3><span class="section-number">3.1.4. </span>Publish as a static website<a class="headerlink" href="#publish-as-a-static-website" title="Permalink to this heading">#</a></h3>
+<p>Sphinx documentation gives some hints on publishing the static website on ReadTheDocs or
+GitHub/Gitlab pages: <a class="reference external" href="https://www.sphinx-doc.org/en/master/tutorial/deploying.html">https://www.sphinx-doc.org/en/master/tutorial/deploying.html</a>
+This uses the remote server abilities to build the documentation from the source code.</p>
+<p>An alternative is to build the static website on your computer using <code class="docutils literal notranslate"><span class="pre">sphinx-autobuild</span></code>.</p>
+</section>
+<section id="generate-a-pdf-document">
+<h3><span class="section-number">3.1.5. </span>Generate a PDF document<a class="headerlink" href="#generate-a-pdf-document" title="Permalink to this heading">#</a></h3>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry<span class="w"> </span>run<span class="w"> </span>sphinx-build<span class="w"> </span>-M<span class="w"> </span>latexpdf<span class="w"> </span>docs/source/<span class="w"> </span>docs/build/html
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Description of the project work once set up</p>
 </div>
+</section>
+</section>
 </section>
 
         </article>
@@ -255,8 +307,34 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">3. Development flow</a><ul>
+<li><a class="reference internal" href="#documentation">3.1. Documentation</a><ul>
+<li><a class="reference internal" href="#install-sphinx">3.1.1. Install Sphinx</a></li>
+<li><a class="reference internal" href="#init-project-files-structure-and-content">3.1.2. Init project files (structure and content)</a></li>
+<li><a class="reference internal" href="#work-on-documentation-content">3.1.3. Work on documentation content</a></li>
+<li><a class="reference internal" href="#publish-as-a-static-website">3.1.4. Publish as a static website</a></li>
+<li><a class="reference internal" href="#generate-a-pdf-document">3.1.5. Generate a PDF document</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

@@ -85,7 +85,7 @@ Sphinx
 
 .. code-block:: console
 
-   $ poetry add sphinx sphinx-autobuild myst-parser
+   $ poetry add -D sphinx sphinx-autobuild myst-parser
 
 Write your project documentation using reStructuredText or
 Markdown syntax, Sphinx builds a beautiful documentation in the form of a static site (HTML, CSS)
