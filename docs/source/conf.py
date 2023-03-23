@@ -48,3 +48,8 @@ html_theme_options = {
     ],
 }
 
+
+# -- Options for Latex output -------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-latex-output
+
+latex_logo = 'ARGANS_logo_alpha.png'
